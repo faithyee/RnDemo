@@ -16,17 +16,56 @@ import {
 
 let widthOfMargin = Dimensions.get('window').width * 0.05;
 
-export default class App extends Component<{}> {
+export default class App extends Component {
+
+  constructor(props) {
+      super(props);
+      this.state = {
+          inputedNum: "",
+          inputedPw: ""
+
+      };
+
+      this.updatePw = this.updatePw.bind(this);
+  }
+
+  updateNum(newText){
+    this.setState((state) => {
+        return {
+            inputedNum: newText,
+        };
+    });
+  }
+
+  updatePw(newText){
+    this.setState(() => {
+          return {
+            inputedPw:newText,
+          };
+        }
+
+    );
+  }
+
+
+
   render() {
     return (
 
       <View style = {styles.container}>
-          <TextInput style = {styles.textInputStyle}  placeholder = {'请输入手机号'}/>
+          <TextInput style = {styles.textInputStyle}
+                     placeholder = {'请输入手机号'}
+                     onChangeText = {(newText) => this.updateNum(newText)}
+          />
           <Text style = {styles.textPromptStyle}>
-            您输入的手机号：
+            您输入的手机号： {this.state.inputedNum}
           </Text>
 
-          <TextInput style = {styles.textInputStyle}  placeholder = {'请输入密码'} secureTextEntry = {true}/>
+          <TextInput style = {styles.textInputStyle}
+                     placeholder = {'请输入密码'}
+                     secureTextEntry = {true}
+                     onChangeText = {this.updatePw}
+          />
 
           <Text style = {styles.bigTextPrompt}>
             确定
