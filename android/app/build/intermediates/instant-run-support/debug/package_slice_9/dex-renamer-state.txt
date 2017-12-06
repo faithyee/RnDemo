@@ -1,0 +1,4 @@
+#Sun Nov 19 00:04:39 CST 2017
+base.0=/Users/faith_yee/work/RN/RnDemo/android/app/build/intermediates/transforms/dexMerger/debug/9
+renamed.0=classes.dex
+file.0=/Users/faith_yee/work/RN/RnDemo/android/app/build/intermediates/transforms/dexMerger/debug/9/classes.dex
