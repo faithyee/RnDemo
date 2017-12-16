@@ -22,7 +22,8 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage()
+          new MainReactPackage()  //开发者需要添加最后的逗号
+          ,new AnExampleReactPackage()    //开发者需要添加这一行代码
       );
     }
 
@@ -42,4 +43,6 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
   }
+
+
 }

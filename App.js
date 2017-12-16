@@ -4,98 +4,68 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
-  Platform,
-  TextInput,
-  StyleSheet,
-  Dimensions,
-  Text,
-  View
+    Platform,
+    BackHandler
 } from 'react-native';
 
-let widthOfMargin = Dimensions.get('window').width * 0.05;
+import LoginLeaf from './LoginLeaf';
+import WaitingLeaf from './WaitingLeaf';
 
 export default class App extends Component {
 
-  constructor(props) {
-      super(props);
-      this.state = {
-          inputedNum: "",
-          inputedPw: ""
 
-      };
-
-      this.updatePw = this.updatePw.bind(this);
-  }
-
-  updateNum(newText){
-    this.setState((state) => {
-        return {
-            inputedNum: newText,
+    constructor(props){
+        super(props);
+        this.state = {
+            currentScene : 'Login',
+            phoneNumber : '',
+            userPw : ''
         };
-    });
-  }
 
-  updatePw(newText){
-    this.setState(() => {
-          return {
-            inputedPw:newText,
-          };
+        this.handleBackSignal = this.handleBackSignal.bind(this);
+        this.onLoginPressed = this.onLoginPressed.bind(this);
+    }
+
+    onLoginPressed( aNumber, aPW){
+        this.setState({
+            currentScene : 'Waiting',
+            phoneNumber : aNumber,
+            userPw : aPW
+        });
+    }
+
+    render(){
+        if(this.state.currentScene === 'Login'){
+            return <LoginLeaf onLoginPressed = {this.onLoginPressed}/>;
+        }else return (<WaitingLeaf
+            phoneNumber= {this.state.phoneNumber}
+            onGobackPressed = {this.handleBackSignal}
+            userPw = {this.state.userPw}/>);
+
+    }
+
+    handleBackSignal(){
+        if( this.state.currentScene ==='Waiting'){
+            this.setState({currentScene:'Login'});
+            return true;
         }
 
-    );
-  }
+        return false;
+    }
 
+    componentDidMount(){
+        if(Platform.OS === 'android'){
+            BackHandler.addEventListener('hardwareBackPress', this.handleBackSignal);
+        }
+    }
 
+    componentWillUnmount(){
+        if(Platform.OS === 'android'){
+            BackHandler.removeEventListener('hardwareBackPress', this.handleBackSignal);
+        }
+    }
 
-  render() {
-    return (
-
-      <View style = {styles.container}>
-          <TextInput style = {styles.textInputStyle}
-                     placeholder = {'请输入手机号'}
-                     onChangeText = {(newText) => this.updateNum(newText)}
-          />
-          <Text style = {styles.textPromptStyle}>
-            您输入的手机号： {this.state.inputedNum}
-          </Text>
-
-          <TextInput style = {styles.textInputStyle}
-                     placeholder = {'请输入密码'}
-                     secureTextEntry = {true}
-                     onChangeText = {this.updatePw}
-          />
-
-          <Text style = {styles.bigTextPrompt}>
-            确定
-          </Text>
-      </View>
-
-    );
-  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  textInputStyle : {
-    margin : widthOfMargin,
-    height : 48,
-    backgroundColor : 'gray',
-    fontSize : 20
-  },
-  textPromptStyle : {
-    margin : widthOfMargin,
-    fontSize : 20
-  },
-  bigTextPrompt : {
-    margin : widthOfMargin,
-    backgroundColor : 'gray',
-    fontSize : 20,
-    color : 'white',
-    textAlign : 'center'
-  },
-});

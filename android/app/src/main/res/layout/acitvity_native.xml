@@ -5,12 +5,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.rndemo.Main2Activity">
+    tools:context="com.rndemo.NativeActivity">
+
+
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:textSize="16sp"
+        android:text="我是原生页面"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <Button
         android:onClick="start"
         android:layout_centerInParent="true"
-        android:text="start"
+        android:text="跳转到Rn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
