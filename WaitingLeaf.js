@@ -18,7 +18,6 @@ export default class WaitingLeaf extends Component {
 
     }
 
-
     render() {
         return (
 
@@ -44,7 +43,9 @@ export default class WaitingLeaf extends Component {
     onGoBackPressed(){
         this.props.onGobackPressed();
     }
+
 }
+
 
 let styles = StyleSheet.create({
     container: {
