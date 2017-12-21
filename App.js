@@ -16,6 +16,9 @@ import Demo1FlexBox from './rnDemo/Demo1FlexBox';
 import Demo2FlexBox from './rnDemo/Demo2FlexBox';
 import Demo3View from './rnDemo/Demo3View';
 import Demo4View from './rnDemo/Demo4View';
+import Demo5TouchEvent from "./rnDemo/Demo5TouchEvent";
+import Demo6onLayout from "./rnDemo/Demo6onLayout";
+import Demo7pointerEvents from "./rnDemo/Demo7pointerEvents"
 
 export default class App extends Component {
 
@@ -34,6 +37,13 @@ export default class App extends Component {
         this.onUI2Pressed = this.onUI2Pressed.bind(this);
         this.onUI3Pressed = this.onUI3Pressed.bind(this);
         this.onUI4Pressed = this.onUI4Pressed.bind(this);
+        this.onUI5Pressed = this.onUI5Pressed.bind(this);
+        this.onUI6Pressed = this.onUI6Pressed.bind(this);
+        this.onUI7Pressed = this.onUI7Pressed.bind(this);
+        this.onUI8Pressed = this.onUI8Pressed.bind(this);
+        this.onUI9Pressed = this.onUI9Pressed.bind(this);
+        this.onUI10Pressed = this.onUI10Pressed.bind(this);
+        this.onUI11Pressed = this.onUI11Pressed.bind(this);
     }
 
     onLoginPressed( aNumber, aPW){
@@ -68,13 +78,62 @@ export default class App extends Component {
         });
     }
 
+    onUI5Pressed(){
+        this.setState({
+            currentScene : 'Demo5TouchEvent'
+        });
+    }
+
+    onUI6Pressed(){
+        this.setState({
+            currentScene : 'Demo6onLayout'
+        });
+    }
+
+    onUI7Pressed(){
+        this.setState({
+            currentScene : 'Demo7PointerEvents'
+        });
+    }
+
+    onUI8Pressed(){
+        this.setState({
+            currentScene : 'Demo8onLayout'
+        });
+    }
+
+    onUI9Pressed(){
+        this.setState({
+            currentScene : 'Demo9onLayout'
+        });
+    }
+
+    onUI10Pressed(){
+        this.setState({
+            currentScene : 'Demo10onLayout'
+        });
+    }
+
+    onUI11Pressed(){
+        this.setState({
+            currentScene : 'Demo11onLayout'
+        });
+    }
+
     render(){
         if(this.state.currentScene === 'Login'){
             return <LoginLeaf onLoginPressed = {this.onLoginPressed}
                               onUI1Pressed = {this.onUI1Pressed}
                               onUI2Pressed = {this.onUI2Pressed}
                               onUI4Pressed = {this.onUI4Pressed}
-                              onUI3Pressed = {this.onUI3Pressed}/>;
+                              onUI6Pressed = {this.onUI6Pressed}
+                              onUI7Pressed = {this.onUI7Pressed}
+                              onUI8Pressed = {this.onUI8Pressed}
+                              onUI9Pressed = {this.onUI9Pressed}
+                              onUI10Pressed = {this.onUI10Pressed}
+                              onUI11Pressed = {this.onUI11Pressed}
+                              onUI3Pressed = {this.onUI3Pressed}
+                              onUI5Pressed = {this.onUI5Pressed}/>;
         }else if(this.state.currentScene === 'Waiting'){
             return (<WaitingLeaf
             phoneNumber= {this.state.phoneNumber}
@@ -88,6 +147,12 @@ export default class App extends Component {
             return <Demo3View></Demo3View>;
         }else if(this.state.currentScene === 'Demo4View'){
             return <Demo4View></Demo4View>;
+        }else if(this.state.currentScene === 'Demo5TouchEvent'){
+            return <Demo5TouchEvent/>
+        }else if(this.state.currentScene === 'Demo6onLayout'){
+            return <Demo6onLayout/>
+        }else if(this.state.currentScene === 'Demo7PointerEvents'){
+            return <Demo7pointerEvents/>
         }
 
     }

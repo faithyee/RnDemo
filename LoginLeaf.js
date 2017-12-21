@@ -69,6 +69,34 @@ export default class App extends Component {
         this.props.onUI4Pressed();
     }
 
+    onUI5Pressed() {
+        this.props.onUI5Pressed();
+    }
+
+    onUI6Pressed() {
+        this.props.onUI6Pressed();
+    }
+
+    onUI7Pressed() {
+        this.props.onUI7Pressed();
+    }
+
+    onUI8Pressed() {
+        this.props.onUI8Pressed();
+    }
+
+    onUI9Pressed() {
+        this.props.onUI9Pressed();
+    }
+
+    onUI10Pressed() {
+        this.props.onUI10Pressed();
+    }
+
+    onUI11Pressed() {
+        this.props.onUI11Pressed();
+    }
+
     //Rn向原生发送消息，并监听原生返回的信息
     userPressAddressBook() {
         DeviceEventEmitter.addListener('AndroidToRnMessage', this.handleAndroidMessage.bind(this));//监听原生消息
@@ -164,7 +192,40 @@ export default class App extends Component {
                           onPress={() => this.onUI4Pressed()}>
                         跳转UI4测试页面
                     </Text>
+                    <Text style={styles.bigTextPrompt}
+                          onPress={() => this.onUI5Pressed()}>
+                        跳转UI5测试页面
+                    </Text>
 
+                    <Text style={styles.bigTextPrompt}
+                          onPress={() => this.onUI6Pressed()}>
+                        跳转UI6测试页面
+                    </Text>
+
+                    <Text style={styles.bigTextPrompt}
+                          onPress={() => this.onUI7Pressed()}>
+                        跳转UI7测试页面
+                    </Text>
+
+                    <Text style={styles.bigTextPrompt}
+                          onPress={() => this.onUI8Pressed()}>
+                        跳转UI8测试页面
+                    </Text>
+
+                    <Text style={styles.bigTextPrompt}
+                          onPress={() => this.onUI9Pressed()}>
+                        跳转UI9测试页面
+                    </Text>
+
+                    <Text style={styles.bigTextPrompt}
+                          onPress={() => this.onUI10Pressed()}>
+                        跳转UI10测试页面
+                    </Text>
+
+                    <Text style={styles.bigTextPrompt}
+                          onPress={() => this.onUI11Pressed()}>
+                        跳转UI11测试页面
+                    </Text>
 
                 </View>
 
