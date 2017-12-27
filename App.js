@@ -19,6 +19,7 @@ import Demo4View from './rnDemo/Demo4View';
 import Demo5TouchEvent from "./rnDemo/Demo5TouchEvent";
 import Demo6onLayout from "./rnDemo/Demo6onLayout";
 import Demo7pointerEvents from "./rnDemo/Demo7pointerEvents"
+import Demo8Image from "./rnDemo/Demo8Image";
 
 export default class App extends Component {
 
@@ -98,7 +99,7 @@ export default class App extends Component {
 
     onUI8Pressed(){
         this.setState({
-            currentScene : 'Demo8onLayout'
+            currentScene : 'Demo8Image'
         });
     }
 
@@ -153,6 +154,8 @@ export default class App extends Component {
             return <Demo6onLayout/>
         }else if(this.state.currentScene === 'Demo7PointerEvents'){
             return <Demo7pointerEvents/>
+        }else if(this.state.currentScene === 'Demo8Image'){
+            return <Demo8Image/>
         }
 
     }
