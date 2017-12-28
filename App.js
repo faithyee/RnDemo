@@ -20,6 +20,7 @@ import Demo5TouchEvent from "./rnDemo/Demo5TouchEvent";
 import Demo6onLayout from "./rnDemo/Demo6onLayout";
 import Demo7pointerEvents from "./rnDemo/Demo7pointerEvents"
 import Demo8Image from "./rnDemo/Demo8Image";
+import Demo9TouchableOpacity from "./rnDemo/Demo9TouchableOpacity";
 
 export default class App extends Component {
 
@@ -105,7 +106,7 @@ export default class App extends Component {
 
     onUI9Pressed(){
         this.setState({
-            currentScene : 'Demo9onLayout'
+            currentScene : 'Demo9TouchableOpacity'
         });
     }
 
@@ -156,6 +157,8 @@ export default class App extends Component {
             return <Demo7pointerEvents/>
         }else if(this.state.currentScene === 'Demo8Image'){
             return <Demo8Image/>
+        }else if(this.state.currentScene === 'Demo9TouchableOpacity'){
+            return <Demo9TouchableOpacity/>
         }
 
     }

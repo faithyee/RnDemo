@@ -169,52 +169,52 @@ export default class App extends Component {
 
                     <Text style={styles.bigTextPrompt}
                           onPress={() => this.sendMegByPromise()}>
-                        通讯录(promise)
+                        通讯录(promise机制)
                     </Text>
 
                     <Text style={styles.bigTextPrompt}
                           onPress={() => this.onUI1Pressed()}>
-                        跳转UI1测试页面
+                        FlexBox Test1
                     </Text>
 
 
                     <Text style={styles.bigTextPrompt}
                           onPress={() => this.onUI2Pressed()}>
-                        跳转UI2测试页面
+                        FlexBox Test2
                     </Text>
 
                     <Text style={styles.bigTextPrompt}
                           onPress={() => this.onUI3Pressed()}>
-                        跳转UI3测试页面
+                        View 1
                     </Text>
 
                     <Text style={styles.bigTextPrompt}
                           onPress={() => this.onUI4Pressed()}>
-                        跳转UI4测试页面
+                        View2
                     </Text>
                     <Text style={styles.bigTextPrompt}
                           onPress={() => this.onUI5Pressed()}>
-                        跳转UI5测试页面
+                        TouchEvent
                     </Text>
 
                     <Text style={styles.bigTextPrompt}
                           onPress={() => this.onUI6Pressed()}>
-                        跳转UI6测试页面
+                        onLayout
                     </Text>
 
                     <Text style={styles.bigTextPrompt}
                           onPress={() => this.onUI7Pressed()}>
-                        跳转UI7测试页面
+                        PointerEvents
                     </Text>
 
                     <Text style={styles.bigTextPrompt}
                           onPress={() => this.onUI8Pressed()}>
-                        跳转UI8测试页面
+                        Image
                     </Text>
 
                     <Text style={styles.bigTextPrompt}
                           onPress={() => this.onUI9Pressed()}>
-                        跳转UI9测试页面
+                        TouchableOpacity
                     </Text>
 
                     <Text style={styles.bigTextPrompt}
