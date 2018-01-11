@@ -21,6 +21,7 @@ import Demo6onLayout from "./rnDemo/Demo6onLayout";
 import Demo7pointerEvents from "./rnDemo/Demo7pointerEvents"
 import Demo8Image from "./rnDemo/Demo8Image";
 import Demo9TouchableOpacity from "./rnDemo/Demo9TouchableOpacity";
+import Demo10TextInput from "./rnDemo/Demo10TextInput";
 
 export default class App extends Component {
 
@@ -112,7 +113,7 @@ export default class App extends Component {
 
     onUI10Pressed(){
         this.setState({
-            currentScene : 'Demo10onLayout'
+            currentScene : 'Demo10TextInput'
         });
     }
 
@@ -159,6 +160,8 @@ export default class App extends Component {
             return <Demo8Image/>
         }else if(this.state.currentScene === 'Demo9TouchableOpacity'){
             return <Demo9TouchableOpacity/>
+        }else if(this.state.currentScene === 'Demo10TextInput'){
+            return <Demo10TextInput/>
         }
 
     }
